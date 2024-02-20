@@ -4,7 +4,13 @@
     <title>My List</title>
   </head>
   <body>
-    <% const message = 'hello, world!'; %>
-    <h1><%= message %></h1>
+    <ul>
+      <% messages.forEach((message) => { %>
+        <% console.log(message, 'this is message') %>
+        <li><%= message.user %></li>
+        <li><%= message.text %></li>
+        <li><%= message.added %></li>
+      <% }); %>
+    </ul>
   </body>
 </html>
