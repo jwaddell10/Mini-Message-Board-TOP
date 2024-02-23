@@ -26,12 +26,10 @@ router.get("/", function (req, res, next) {
 router.post("/new", (req, res) => {
   const userName = req.body.author;
   const userMessage = req.body.message;
-  
-  // Add the new message to the messages array
-  messages.push({text: userMessage, user: userName, added: new Date()});
 
-  // Redirect the user to the root URL
-  res.redirect('/');
+  messages.push({ text: userMessage, user: userName, added: new Date() });
+
+  res.redirect("/");
 });
 
 module.exports = router;

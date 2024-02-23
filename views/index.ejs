@@ -6,10 +6,19 @@
   <body>
     <ul>
       <% messages.forEach((message) => { %>
-        <li><%= message.user %></li>
-        <li><%= message.text %></li>
-        <li><%= message.added %></li>
+      <li><%= message.user %></li>
+      <li><%= message.text %></li>
+      <li><%= message.added %></li>
       <% }); %>
     </ul>
+    <button id="newMessageButton" onClick="window.location.href='/new/'">
+      New Message
+    </button>
+    <!-- <script>
+      const myButton = document.getElementById('newMessagesButton');
+      myButton.addEventListener('click', () => {
+        window.location.href='/new'
+      })
+    </script> -->
   </body>
 </html>
