@@ -16,13 +16,17 @@ const messages = [
 
 router.get("/new", function (req, res, next) {
   res.render("form");
-  console.log('form rendered');
+  console.log("form rendered");
 });
 
 router.get("/", function (req, res, next) {
   res.render("index", { title: "Mini Messageboard", messages: messages });
 });
 
-// router.post()
+router.post("/new", (req, res) => {
+  const userName = req.body.author;
+  const userMessage = req.body.message;
+  res.send(`Username: ${userName}, Message: ${userMessage}`);
+});
 
 module.exports = router;
